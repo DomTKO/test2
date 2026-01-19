@@ -1,0 +1,346 @@
+{
+  "login": {
+    "title": "Anmelden",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "submit": "Weiter",
+    "invalid": "Benutzername oder Passwort ist ungültig.",
+    "inactive": "Ihr Zugang ist deaktiviert.",
+    "abort": "Abbrechen",
+    "logout": "Ausloggen"
+  },
+  "home": {
+    "title": "Startseite"
+  },
+  "lang": {
+    "de": "Deutsch",
+    "en": "English"
+  },
+  "common": {
+    "loading": "Laden…",
+    "saving": "Wird gespeichert…",
+    "error": "Etwas ist schiefgelaufen.",
+    "loadError": "Daten konnten nicht geladen werden.",
+    "back": "Zurück",
+    "required": "Erforderlich"
+  },
+  "vote": {
+    "availableBallots": "Verfügbare Stimmzettel",
+    "openBallot": "Stimmzettel öffnen",
+    "pickBetween": "Bitte {min} bis {max} Option(en) auswählen.",
+    "selectedCount": "Ausgewählt: {n}",
+    "needMore": "Bitte mindestens {n} Option(en) auswählen.",
+    "tooMany": "Maximal {max} Option(en) erlaubt.",
+    "submit": "Stimme abgeben",
+    "success": "Deine Stimme wurde gezählt.",
+    "editSelection": "Bearbeiten",
+    "continue": "Bestätigen",
+    "alreadyVoted": "Du hast für diesen Stimmzettel bereits abgestimmt.",
+    "invalidCount": "Ungültige Anzahl (erlaubt: {min}–{max}).",
+    "submitInvalid": "Ungültige Stimme abgeben",
+    "submittedBallots": "Abgegebene Stimmzettel",
+    "ballotSubmitted": "Stimmzettel abgegeben",
+    "verifyTitle": "Stimme überprüfen",
+    "verifyInstruction": "Scannen Sie diesen QR-Code mit einem zweiten Gerät, um Ihre Auswahl zu kontrollieren.",
+    "verifyWindowUntil": "Verifizierung möglich bis",
+    "verifyTokenRefresh": "Der Code wird in {seconds} Sekunden erneuert.",
+    "verifierError": "Die Verifizierungssitzung konnte nicht gestartet werden.",
+    "verifierExpired": "Die Verifizierungssitzung ist abgelaufen.",
+    "nextBallot": "Nächster Stimmzettel",
+    "finishAndLogout": "Wahl beenden und abmelden",
+    "verifyTokenStopped": "QR-Codegenerierung gestoppt, prüfen Sie das Ergebnis auf Ihrem Zweitgerät.",
+    "verifyRescan": "QR-Generierung fortsetzen",
+    "invalidVoteCheckboxLabel": "Ungültig wählen",
+    "invalidVoteCheckboxHint": "",
+    "invalidSubmitWarning": "Wenn Sie Ihre Stimme jetzt abgeben, wird sie als ungültig markiert."
+
+  },
+  "verify": {
+    "title": "Stimmzettel prüfen",
+    "validLabel": "Gültige Stimme",
+    "invalidLabel": "Ungültige Stimme",
+    "tokenInvalid": "Dieser QR-Code ist ungültig oder abgelaufen.",
+    "noChoices": "Für diese Stimme wurden keine Auswahloptionen gefunden.",
+    "noToken": "Kein Prüf-Token übergeben.",
+    "confirmButton": "Bestätigen",
+    "sessionEndedHint": "Die Verifizierungssitzung wurde beendet. Sie können dieses Fenster schließen.",
+    "editWarningTitle": "Hinweis",
+    "editWarningText": "Sie können diese Ansicht bearbeiten, aber Änderungen wirken sich nicht mehr auf Ihr gespeichertes Stimmergebnis aus.",
+    "editWarningOk": "Verstanden",
+    "usernameConfirmHint": "Bitte geben Sie zur Bestätigung den Benutzernamen ein.",
+    "usernameLabel": "Benutzername",
+    "usernamePlaceholder": "Benutzername eingeben",
+    "usernameConfirmAction": "Bestätigen",
+    "usernameRequired": "Bitte geben Sie einen Benutzernamen ein.",
+    "usernameMismatch": "Der Benutzername passt nicht zu diesem Token.",
+
+    "report": {
+      "title": "Problem melden",
+      "intro": "Wenn Ihnen bei der Anzeige dieser Stimme etwas ungewöhnlich erscheint, können Sie hier eine kurze Rückmeldung geben.",
+      "contactLabel": "Kontakt",
+      "optional": "(optional)",
+      "contactPlaceholder": "z. B. E-Mail-Adresse für Rückfragen",
+      "messageLabel": "Nachricht",
+      "messagePlaceholder": "Beschreiben Sie kurz das Problem mit dieser Stimme oder Anzeige.",
+      "submit": "Problem senden",
+      "success": "Ihr Hinweis wurde gespeichert. Vielen Dank.",
+      "error": "Ihr Hinweis konnte nicht gespeichert werden.",
+      "validationError": "Bitte beschreiben Sie das Problem kurz.",
+      "disabled": "Diese Funktion ist aktuell deaktiviert."
+
+    }
+  },
+  "admin": {
+    "settings": {
+      "title": "Allgemeine Einstellungen",
+      "intro": "Hier können Sie globale Einstellungen der Wahl-Anwendung verwalten.",
+
+      "researchTitle": "Forschungsoptionen",
+      "researchSubtitle": "Hier können Sie Einstellungen vornehmen, um das Verhalten der Anwendung zu ändern.",
+      "manipulation": "Manipulationen",
+      "manipulationNote": "Bei Änderungen speichern. Achtung, diese Optionen sollten nicht unbedacht aktiviert werden.",
+      "researchVerifierOffsetLabel": "Verifer-Ergebnisse um 1 rotieren.",
+      "researchHideQrLabel": "QR-Code ausblenden",
+      "researchSaveButton": "Optionen speichern",
+      "saveResearchSuccess": "Forschungsoptionen wurden gespeichert",
+
+      "textBlocksTitle": "Öffentliche Informationstexte",
+      "textBlocksSubtitle": "Bearbeiten Sie die Textblöcke, die auf Startseite, Login und Verifier angezeigt werden.",
+
+      "logoTitle": "Logo und Erscheinungsbild",
+      "logoSubtitle": "Hier können Sie das Logo der Anwendung verwalten.",
+      "saveLogoSuccess": "Logo erfolgreich hochgeladen. Ggf. Seite erneut laden, um die Änderung zu sehen.",
+      "logoFieldTitle": "Logo-Datei",
+      "logoFieldHint": "Unterstützte Formate: PNG, JPG, SVG, GIF, WebP. Maximale Dateigröße: 5 MB.",
+      "logoUrlLabel": "Logo hochladen",
+      "logoUrlPlaceholder": "Keine Datei ausgewählt",
+      "removeLogo": "Logo entfernen",
+      "logoPreviewLabel": "Aktuelles Logo / Vorschau",
+
+      "saveTextsSuccess": "Texte erfolgreich gespeichert. Beachten Sie, dass unzulässige Tags dazu führen können, dass Teile herausgefiltert werden.",
+
+      "appearanceSaveButton": "Erscheinungsbild/Logo speichern",
+      "saveAppearanceSuccess": "Erscheinungsbild wurde gespeichert.",
+
+      "logoLoadError": "Logo konnte nicht geladen werden.",
+      "logoPreviewAlt": "Logo-Vorschau",
+
+      "lang": {
+        "de": "Deutsch (de)",
+        "en": "English (en)"
+      },
+
+      "appTitle": {
+        "title": "App Titel",
+        "hint": "Dieser Titel wird im Header der App angezeigt (pro Sprache).",
+        "placeholderDe": "z.B. Voting-App",
+        "placeholderEn": "e.g. Voting App"
+      },
+
+      "misc": {
+        "title": "Sonstiges",
+        "subtitle": "Zusätzliche Features",
+        "saveButton": "Speichern",
+        "savedSuccess": "Sonstiges gespeichert.",
+        "otherFlagsTitle": "Weitere Optionen",
+        "votingInvalidVoteCheckbox": "Im Voting eine Checkbox für „ungültig wählen“ anzeigen",
+        "verifierRequireUsernameConfirm": "Im Verifier vor der Prüfung nochmal den Nutzernamen bestätigen lassen",
+        "otherFlagsHint": ""
+
+      },
+
+      "publicReport": {
+        "title": "Problem melden (Public Report)",
+        "hint": "Wenn aktiviert, können Nutzer auch ohne Login Tickets erstellen.",
+        "enableLabel": "Problem melden auch ohne Login erlauben",
+        "ariaLabel": "Public Report URL",
+        "copy": "Kopieren",
+        "copied": "Kopiert ✓",
+        "linkHintEnabled": "Diesen Link kannst du an Teilnehmende weitergeben.",
+        "linkHintDisabled": "Aktiviere die Option, um den Link zu nutzen.",
+        "copySuccess": "Link kopiert.",
+        "copyFailed": "Kopieren fehlgeschlagen"
+      },
+
+      "appearanceOther": {
+        "title": "Erscheinungsbild",
+        "hint": "Diese Optionen beeinflussen die Anzeige in Voting- und Verifier-Ansicht.",
+        "votingHideAfterSubmit": "Stimmzettel in der Voting-Ansicht nach dem Absenden ausblenden",
+        "votingQrOnlyLastBallot": "QR-Code in der Voting-Ansicht nur beim letzten Stimmzettel anzeigen",
+        "verifierShowAllBallots": "Verifier zeigt alle abgegeben Stimmzettel des Wählers auf einmal",
+        "votingShowInvalidVoteButton": "Separaten Button „Ungültige Stimme“ in der Voting-Ansicht anzeigen (Nicht empfohlen, keine Auswirkung wenn Checkbox für „ungültig wählen“ aktiviert ist)",
+        "votingDisableSubmitOnInvalid": "„Stimme abgeben“ deaktivieren, wenn Auswahl ungültig ist",
+        "votingDisableInvalidButtonWhenValid": "„Ungültige Stimme“ deaktivieren, wenn Auswahl gültig ist",
+        "saveButton": "Erscheinungsbild/Logo speichern",
+        "veriferReportUseSimpleView": "Verifier-Report: einfache Ansicht verwenden",
+        "verifierReportUseSimpleView": "Verifer verlinkt auf einfache Problem-Melden-Seite (Nicht empfohlen)"
+      },
+
+      "block": {
+        "home": {
+          "title": "Startseite (eingeloggt)",
+          "hint": "Dieser Textblock wird auf der Startseite nach dem Login angezeigt. Leer lassen, um keinen zusätzlichen Infotext einzublenden."
+        },
+        "login": {
+          "title": "Login-Seite",
+          "hint": "Dieser Textblock wird oberhalb des Login-Formulars angezeigt. Leer lassen, um keinen Infotext anzuzeigen."
+        },
+        "verify": {
+          "title": "Verifier-Ansicht",
+          "hint": "Dieser Textblock wird in der Verifier-Ansicht oberhalb der Auswahl angezeigt, solange die Sitzung aktiv ist. Leer lassen, um keinen Text anzuzeigen."
+        },
+        "votingInfo": {
+          "title": "Voting-Info",
+          "hint": "Dieser Textblock wird in der Voting-Ansicht im Infobereich angezeigt. Leer lassen, um keinen Text anzuzeigen."
+        }
+      },
+
+      "saveButton": "Texte speichern",
+      "loadError": "Die Texte konnten nicht geladen werden.",
+      "saveError": "Die Texte konnten nicht gespeichert werden.",
+      "saveSuccess": "Die Texte wurden erfolgreich gespeichert."
+    },
+
+    "logs": {
+      "title": "System-Logs",
+      "intro": "Letzte Ereignisse aus Voting-App und Verifier. Beachten Sie, dass Aktivitäten von Admins nur eingeschrängt geloggt werden",
+      "filterComponentLabel": "Komponente",
+      "filterLevelLabel": "Level",
+      "componentAll": "Alle",
+      "componentVoting": "Voting",
+      "componentVerifier": "Verifier",
+      "componentAdminApi": "Admin-API",
+      "levelAll": "Alle",
+      "reload": "Neu laden",
+      "downloadJson": "Als JSON herunterladen",
+      "loadError": "Logs konnten nicht geladen werden.",
+      "empty": "Keine Logs gefunden.",
+      "colTime": "Zeitpunkt",
+      "colUserId": "User-ID",
+      "colComponent": "Komponente",
+      "colEvent": "Event",
+      "colLevel": "Level",
+      "colUserAgent": "User-Agent",
+      "colDetails": "Details",
+      "detailsShow": "Anzeigen",
+      "detailsClose": "Schließen"
+    },
+
+    "panel": {
+      "title": "Adminbereich",
+      "settings": "Allgemeine Einstellungen",
+      "users": "Nutzerverwaltung",
+      "ballots": "Wahlzettelverwaltung",
+      "tickets": "Nutzermeldungen",
+      "back": "Zurück",
+      "logs": "Logs"
+    },
+
+    "tickets": {
+      "title": "Nutzermeldungen",
+      "intro": "Hier sehen Sie Rückmeldungen von Nutzerinnen und Nutzern aus der Verifier-App.",
+      "loadError": "Die Nutzermeldungen konnten nicht geladen werden.",
+      "empty": "Es liegen derzeit keine Nutzermeldungen vor.",
+      "statusOpen": "Offen",
+      "statusResolved": "Erledigt",
+      "markResolved": "Als erledigt markieren",
+      "markOpen": "Wieder öffnen",
+      "updateError": "Die Meldung konnte nicht aktualisiert werden.",
+      "contactLabel": "Kontakt",
+      "messageLabel": "Meldung",
+      "ballotLabel": "Stimmzettel / Wahl",
+      "userLabel": "Nutzer",
+      "createdAt": "Eingegangen am",
+      "filterOpenOnly": "Nur offene Meldungen anzeigen"
+    },
+
+    "users": {
+      "title": "Benutzerverwaltung",
+      "intro": "Hier können Sie mehrere Wahlkonten (z. B. für Wähler) auf einmal anlegen. Die Passwörter werden nur hier im Browser angezeigt und nicht im System gespeichert. Die Generierung kann durchaus mehrere Sekunden dauern.  ",
+      "usernamePrefixLabel": "Benutzername-Präfix",
+      "usernamePrefixPlaceholder": "z. B. waehler",
+      "suffixLengthLabel": "Suffix-Länge",
+      "suffixLengthHelp": "4 bis 6 Zeichen",
+      "startIndexLabel": "Startindex",
+      "startIndexHelp": "Benutzernamen werden z. B. zu waehler1, waehler2, …",
+      "countLabel": "Anzahl Konten",
+      "countHelp": "Maximal 500 pro Vorgang.",
+      "roleLabel": "Rolle",
+      "role": {
+        "voter": "Wähler (voter)",
+        "admin": "Admin",
+        "showroom": "Showroom-Nutzer (showroom)"
+      },
+      "createButton": "Konten anlegen",
+      "validationError": "Bitte Präfix, Startindex und Anzahl korrekt angeben.",
+      "createError": "Konten konnten nicht angelegt werden.",
+      "createSuccess": "{n} Konten wurden angelegt.",
+      "tabNew": "Neue Konten",
+      "tabExisting": "Bestehende Konten",
+      "newHeading": "Erzeugte Konten",
+      "noNew": "Noch keine Konten in dieser Sitzung erzeugt.",
+      "copyAll": "Alle Benutzer und Passwörter kopieren",
+      "colUsername": "Benutzername",
+      "colPassword": "Passwort (nur hier sichtbar)",
+      "copyAllSuccess": "Alle Zugangsdaten wurden in die Zwischenablage kopiert.",
+      "copyAllError": "Die Zugangsdaten konnten nicht in die Zwischenablage kopiert werden.",
+      "existingHeading": "Bestehende Konten",
+      "existingLoadError": "Bestehende Konten konnten nicht geladen werden.",
+      "noExisting": "Es sind derzeit keine Benutzer vorhanden.",
+      "colRole": "Rolle",
+      "colActions": "Aktionen",
+      "youSuffix": "(Sie)",
+      "delete": "Löschen",
+      "deleteError": "Löschen fehlgeschlagen.",
+      "colActive": "Aktiv",
+      "activeLabel": "aktiv",
+      "inactiveLabel": "inaktiv",
+      "cannotDeactivateSelf": "Sie können Ihr eigenes Konto nicht deaktivieren.",
+      "updateActiveError": "Der Aktiv-Status konnte nicht aktualisiert werden."
+    },
+
+    "ballots": {
+      "modeSimple": "Standart",
+      "modePair": "Erst-/Zweitstimme (Experimentell)",
+      "typeSimple": "Standard-Stimmzettel",
+      "typeSecond": "Zweitstimme",
+      "secondVote": "Zweitstimme",
+      "typeFirst": "Erststimme",
+      "firstVote": "Erststimme",
+      "electionGroupTitle": "Wahltitel",
+      "electionTitleDe": "Wahltitel (Deutsch)",
+      "electionTitleEn": "Wahltitel (Englisch)",
+      "electionGroupShort": "Erst-/Zweitstimme (Experimentell)",
+      "pairHelp": "Achtung! Experimentelle funktion! Nicht alles ist darauf angepasst!",
+      "title": "Stimmzettel-Verwaltung",
+      "intro": "Legen Sie hier Stimmzettel und deren Auswahlmöglichkeiten an.",
+      "addBallot": "Neuen Stimmzettel anlegen",
+      "newBallotTitle": "Neuer Stimmzettel",
+      "titleDe": "Titel (Deutsch)",
+      "titleEn": "Titel (Englisch)",
+      "descDe": "Beschreibung (Deutsch)",
+      "descEn": "Beschreibung (Englisch)",
+      "minChoices": "Minimale Auswahl",
+      "maxChoices": "Maximale Auswahl",
+      "createButton": "Stimmzettel speichern",
+      "validationError": "Bitte Titel und sinnvolle Auswahlregeln angeben.",
+      "createError": "Stimmzettel konnte nicht angelegt werden.",
+      "loadError": "Stimmzettel konnten nicht geladen werden.",
+      "rulesSummary": "{min} bis {max} Option(en) auswählbar.",
+      "delete": "Stimmzettel löschen",
+      "deleteError": "Stimmzettel konnte nicht gelöscht werden.",
+      "deleteHasVotes": "Stimmzettel kann nicht gelöscht werden, da bereits Stimmen vorliegen.",
+      "choicesTitle": "Auswahlmöglichkeiten",
+      "noChoices": "Noch keine Auswahlmöglichkeiten.",
+      "choicesLoadError": "Auswahlmöglichkeiten konnten nicht geladen werden.",
+      "choiceDe": "Bezeichnung (DE)",
+      "choiceEn": "Bezeichnung (EN)",
+      "addChoice": "Option hinzufügen",
+      "choiceValidationError": "Bitte jeweils eine deutsche und englische Bezeichnung angeben.",
+      "addChoiceError": "Auswahlmöglichkeit konnte nicht angelegt werden.",
+      "deleteChoice": "Option löschen",
+      "deleteChoiceError": "Auswahlmöglichkeit konnte nicht gelöscht werden.",
+      "deleteChoiceHasVotes": "Diese Auswahlmöglichkeit kann nicht gelöscht werden, da bereits Stimmen dafür abgegeben wurden."
+    }
+  }
+}

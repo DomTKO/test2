@@ -1,0 +1,86 @@
+----------------------------------------------------------------------
+NUTZUNGSLIZENZ FÜR DAS KARLSRUHER INSTITUT FÜR TECHNOLOGIE (KIT)
+Version 1.1  / Stand: November 2025
+----------------------------------------------------------------------
+
+1. Parteien und Gegenstand
+
+Urheber / Lizenzgeber:
+Dominik Tkocz
+
+Lizenznehmerin:
+Karlsruher Institut für Technologie (KIT)
+
+Gegenstand dieser Lizenz ist die Software in der im Repository zum
+Zeitpunkt der Abgabe vorliegenden Fassung (nachfolgend "Software").
+Es handelt sich um ein Mockup / Demonstrationssystem.
+
+
+2. Einräumung von Nutzungsrechten an das KIT
+
+(1) Der Lizenzgeber räumt dem KIT ein einfaches (nicht-exklusives),
+nicht übertragbares, zeitlich unbefristetes und unentgeltliches
+Nutzungsrecht an der Software ein.
+
+(2) Dieses Nutzungsrecht umfasst das Recht, die Software
+
+- auf Systemen des KIT zu speichern und auszuführen,
+- innerhalb des KIT zu vervielfältigen und zu verteilen,
+- innerhalb des KIT zu bearbeiten, zu erweitern und mit anderer
+  Software zu verbinden,
+- als Bestandteil von vom KIT angebotenen Diensten gegenüber Dritten
+  einzusetzen, ohne Dritten ein eigenes Nutzungsrecht an der Software
+  einzuräumen.
+
+(3) Die Software ist als Mockup / Demonstrationssystem konzipiert und
+in der vorliegenden Fassung nicht für den unmittelbaren produktiven
+Einsatz mit realen personenbezogenen Daten vorgesehen. Das KIT ist
+jedoch berechtigt, die Software zu erweitern, anzupassen und in eigene
+produktive Systeme zu integrieren. Für einen solchen erweiterten Einsatz
+ist keine zusätzliche Zustimmung des Lizenzgebers erforderlich.
+Das KIT trägt die alleinige Verantwortung für die Einhaltung aller
+einschlägigen gesetzlichen Anforderungen (insbesondere Datenschutzrecht).
+
+(4) Diese Lizenz gilt nur für die vom Lizenzgeber selbst geschriebene
+Software in diesem Repository. Drittanbieter-Software, Bibliotheken und
+sonstige Komponenten, die in diesem Projekt verwendet werden, unterliegen
+jeweils ihren eigenen Lizenzen.
+
+(5) Der Lizenzgeber ist nicht zur Wartung, Pflege, Aktualisierung oder
+zum Support der Software verpflichtet.
+
+
+3. Weitergabe, Veröffentlichung und Unterlizenzierung
+
+(1) Das KIT darf die Software sowie Bearbeitungen hiervon ohne vorherige
+Zustimmung des Lizenzgebers nicht unter einer anderen Lizenz (z.B. MIT
+oder einer sonstigen Open-Source-Lizenz) veröffentlichen oder
+unterlizenzieren.
+
+(2) Eine Weitergabe oder Veröffentlichung der Software oder von
+Bearbeitungen hiervon gegenüber Dritten ist ohne vorherige schriftliche
+Zustimmung des Lizenzgebers nicht zulässig, soweit sie über den in
+Ziffer 2 genannten Einsatz als Bestandteil von KIT-Diensten hinausgeht.
+
+
+4. Gewährleistung, Haftung und Datenschutz
+
+(1) Die Software wird in der vorliegenden Form bereitgestellt, ohne
+Zusicherung einer bestimmten Beschaffenheit oder Eignung für einen
+bestimmten Zweck. Sie wurde insbesondere nicht auf Konformität mit
+Datenschutzrecht (z.B. DSGVO) für einen produktiven Einsatz geprüft.
+
+
+(2) Die Nutzung erfolgt auf eigenes Risiko des KIT. Eine Haftung des
+Lizenzgebers ist – soweit gesetzlich zulässig – auf Vorsatz und grobe
+Fahrlässigkeit beschränkt. Die Haftungsbeschränkung gilt nicht bei
+Verletzung von Leben, Körper oder Gesundheit sowie in Fällen zwingender
+gesetzlicher Haftung.
+
+
+5. Geltendes Recht
+
+Es gilt das Recht der Bundesrepublik Deutschland. Zwingende
+verbraucherschützende Vorschriften bleiben unberührt.
+
+----------------------------------------------------------------------

@@ -1,0 +1,174 @@
+services:
+  traefik:
+    image: traefik:v3.1
+    container_name: traefik
+    restart: unless-stopped
+    command:
+      # Docker provider
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+
+      # Entrypoints
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+
+      # HTTP -> HTTPS redirect
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+
+      # Let's Encrypt (ACME)
+      - --certificatesresolvers.le.acme.tlschallenge=true
+      - --certificatesresolvers.le.acme.email=${LE_EMAIL:-info@dtkocz.de}
+      - --certificatesresolvers.le.acme.storage=/letsencrypt/acme.json
+
+      # (optional) Dashboard (nur intern / später absichern)
+      # - --api.dashboard=true
+      # - --api.insecure=true
+
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - traefik_letsencrypt:/letsencrypt
+    networks:
+      - web
+
+  voting-app:
+    build:
+      context: ./voting-app
+      dockerfile: dockerfile
+      args:
+        VITE_APP_MODE: "voting"
+        VITE_VERIFIER_BASE_URL: "https://verifier.dtkocz.de"
+        VITE_API_BASE_URL: "https://voting.dtkocz.de/api"
+        VITE_DISABLE_LOGIN: "0"
+    restart: unless-stopped
+    depends_on:
+      - api-service
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.voting.rule=Host(`voting.dtkocz.de`)
+      - traefik.http.routers.voting.entrypoints=websecure
+      - traefik.http.routers.voting.tls=true
+      - traefik.http.routers.voting.tls.certresolver=le
+      - traefik.http.services.voting.loadbalancer.server.port=80
+
+      #########################################################################################################
+      #########################################################################################################
+      ##########################REDIRECT  demo.dtkocz.de
+      - traefik.http.routers.demo-redirect.rule=Host(`demo.dtkocz.de`)
+      - traefik.http.routers.demo-redirect.entrypoints=websecure
+      - traefik.http.routers.demo-redirect.tls=true
+      - traefik.http.routers.demo-redirect.tls.certresolver=le
+      - traefik.http.routers.demo-redirect.middlewares=demo-to-voting
+      - traefik.http.routers.demo-redirect.service=noop@internal
+      - traefik.http.middlewares.demo-to-voting.redirectregex.regex=^https?://demo\.dtkocz\.de/?(.*)
+      - traefik.http.middlewares.demo-to-voting.redirectregex.replacement=https://voting.dtkocz.de/$${1}
+      - traefik.http.middlewares.demo-to-voting.redirectregex.permanent=true
+        #########################################################################################################
+        #########################################################################################################
+        #########################################################################################################
+        #########################################################################################################
+
+  verifier-app:
+    build:
+      context: ./voting-app
+      dockerfile: dockerfile
+      args:
+        VITE_APP_MODE: "verifier"
+        VITE_VERIFIER_BASE_URL: "https://verifier.dtkocz.de"
+        VITE_API_BASE_URL: "https://voting.dtkocz.de/api"
+        VITE_DISABLE_LOGIN: "1"
+    restart: unless-stopped
+    depends_on:
+      - api-service
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.verifier.rule=Host(`verifier.dtkocz.de`)
+      - traefik.http.routers.verifier.entrypoints=websecure
+      - traefik.http.routers.verifier.tls=true
+      - traefik.http.routers.verifier.tls.certresolver=le
+      - traefik.http.services.verifier.loadbalancer.server.port=80
+
+  api-service:
+    build:
+      context: ./api-service
+      dockerfile: Dockerfile
+    image: web-second-device-verifier-mockup-main_api-service:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: "mysql://app:app@mysql:3306/voting?charset=utf8mb4"
+      JWT_SECRET: "${JWT_SECRET:-change-me!bitte-ändern!}"
+      PORT: "3000"
+      NODE_ENV: "production"
+
+      CORS_ORIGINS: "https://voting.dtkocz.de,https://verifier.dtkocz.de"
+      VERIFIER_ORIGINS: "https://verifier.dtkocz.de"
+      VERIFIER_BASE_URL: "https://verifier.dtkocz.de"
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - web
+    labels:
+      - traefik.enable=true
+
+      # https://voting.dtkocz.de/api/* -> api-service
+      - traefik.http.routers.api.rule=Host(`voting.dtkocz.de`) && PathPrefix(`/api`)
+      - traefik.http.routers.api.entrypoints=websecure
+      - traefik.http.routers.api.tls=true
+      - traefik.http.routers.api.tls.certresolver=le
+
+      - traefik.http.middlewares.api-strip.stripprefix.prefixes=/api
+      - traefik.http.routers.api.middlewares=api-strip
+
+      - traefik.http.services.api.loadbalancer.server.port=3000
+
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpw
+      MYSQL_DATABASE: voting
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+      MYSQL_ROOT_HOST: "%"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test:
+        ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -prootpw || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - web
+
+  adminer:
+    image: adminer
+    platform: linux/amd64
+    restart: unless-stopped
+    environment:
+      ADMINER_DEFAULT_SERVER: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - web
+    ports:
+      - "8084:8080"
+
+networks:
+  web:
+    name: web
+
+volumes:
+  mysql_data:
+  traefik_letsencrypt:
