@@ -38,7 +38,7 @@
       />
 
       <section v-if="showInvalidWarningBox" class="invalid-warning-box" role="alert">
-        Wenn sie Ihre stimme jetzt abgeben wird sie als ungültig makiert.
+        {{ t("vote.invalidSubmitWarning") }}
       </section>
 
       <p
@@ -198,8 +198,8 @@ const invalidChecked = computed(() => {
 
 const showInvalidWarningBox = computed(() => {
   if (!selectionLocked.value) return false;
-  if (!isInvalid.value) return false;
-  if (votingInvalidVoteCheckbox.value && invalidChecked.value) return false;
+  if (!isInvalid.value) return false; 
+  //if (votingInvalidVoteCheckbox.value && invalidChecked.value) return false; //wenn ungültig wählen checkbox ausgewählt ist, soll die box nicht angezeigt werden
   return true;
 });
 

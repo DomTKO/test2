@@ -140,7 +140,7 @@ router.post("/auth/login", async (req, res) => {
       eventType: "LOGIN_FAILED",
       level: "WARN",
       userId: user.id,
-      details: { username: user.userName, reason: "VERIFY_ERROR" },
+      details: { reason: "VERIFY_ERROR" },
     });
 
     return res
@@ -165,7 +165,7 @@ router.post("/auth/login", async (req, res) => {
     component: "voting",
     eventType: "LOGIN_SUCCESS",
     userId: user.id,
-    details: { username: user.userName, role: user.role },
+    details: { role: user.role },
   });
 
   res.json({ ok: true });

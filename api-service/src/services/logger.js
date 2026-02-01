@@ -1,4 +1,5 @@
 // Dominik Tkocz — Licensed to Karlsruher Institut für Technologie (KIT). See LICENSE for terms.
+//Dies ist für das technisches logging für die Konsole. Daneben gibt es noch das Audit-Logging was in die DB geschrieben wird (audit.js)
 export function installProcessHandlers() {
   process.on("unhandledRejection", (err) => {
     console.error("UNHANDLED REJECTION:", err);

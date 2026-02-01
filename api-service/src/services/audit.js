@@ -128,9 +128,6 @@ export async function logEvent(
       detailsObj = {};
     }
 
-    detailsObj.auditLabel = getAuditLabelDe(eventType);
-    detailsObj.auditCode = eventType;
-
     await pool.query(
       `INSERT INTO logs (userId, component, eventType, level, userAgent, details)
        VALUES (?, ?, ?, ?, ?, ?)`,
